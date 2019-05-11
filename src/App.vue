@@ -1,16 +1,36 @@
 <template>
   <div id="app">
 
-    <div id="nav">
+    <nav>
+      <div id="usernameBox"><Username Username="XxToxicGeckoxX"/></div>
+      <router-link class="navItems" id="homeButton"  to="/">Home</router-link>
+      <router-link class="navItems" to="/highScores">High Scores</router-link>
+      <router-link class="navItems" to="/game">Game</router-link>
+    </nav>
+
+    <!-- <div id="nav">
       <router-link id="homeButton" class="navItems" to="/">Home</router-link>
       <router-link class="navItems" to="/highScores">High Scores</router-link>
       <router-link class="navItems" to="/game">Game</router-link>
-    </div>
+      <Username id="usernameBox" Username="XxToxicGeckoxX"/>
+    </div> -->
 
     <router-view/>
 
   </div>
 </template>
+
+<script>
+import Username from '@/components/Username.vue'
+
+export default {
+  name: 'home',
+  components: {
+    Username
+  }
+}
+
+</script>
 
 <style scoped>
 #app {
@@ -18,20 +38,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 
-#nav {
+nav {
   padding: 1px;
   margin: 35px;
-  border-radius: 100px;
+  border-radius: 100px; 
   background-color: rgb(35, 35, 35);
-  display: inline-block;
   font-size: 18px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  overflow: hidden;
 }
 
 .navItems {
@@ -41,10 +57,13 @@
   font-weight: bold;
   color: #919191;
   text-decoration: none;
+  text-align: center;
+  display: block;
+  float: right;
 }
 
 .navItems:hover {
-  background-color: rgb(83, 83, 83);
+  background-color: rgb(121, 111, 111);
 }
 
 .navItems:active {
@@ -54,9 +73,25 @@
 
 #homeButton {
   margin-left: 30px;
+  float: left;
 }
 
-#nav a.router-link-exact-active {
+nav a.router-link-exact-active {
   color: #15be15;
 }
+
+#usernameBox {
+  /* font-family: 'Insula', Helvetica, Arial, sans-serif; */
+  margin-left: 15px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #919191;
+  text-align: center;
+  display: block;
+  float: left;
+}
+
+/* #username {
+  font-family: 'Insula', Helvetica, Arial, sans-serif;
+} */
 </style>
