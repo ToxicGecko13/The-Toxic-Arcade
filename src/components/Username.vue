@@ -17,5 +17,6 @@ export default {
     p {
         font-size: 18px;
         color: #15be15;
+        font-family: sans-serif;
     }
 </style>

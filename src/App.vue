@@ -4,16 +4,9 @@
     <nav>
       <div id="usernameBox"><Username Username="XxToxicGeckoxX"/></div>
       <router-link class="navItems" id="homeButton"  to="/">Home</router-link>
-      <router-link class="navItems" to="/highScores">High Scores</router-link>
-      <router-link class="navItems" to="/game">Game</router-link>
+      <router-link class="navItems" to="/HighScores">High Scores</router-link>
+      <router-link class="navItems" to="/Game">Game</router-link>
     </nav>
-
-    <!-- <div id="nav">
-      <router-link id="homeButton" class="navItems" to="/">Home</router-link>
-      <router-link class="navItems" to="/highScores">High Scores</router-link>
-      <router-link class="navItems" to="/game">Game</router-link>
-      <Username id="usernameBox" Username="XxToxicGeckoxX"/>
-    </div> -->
 
     <router-view/>
 
@@ -38,22 +31,21 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* background-color: whitesmoke; */
+  border: 0;
+  margin: 0;
 }
 
 nav {
-  padding: 1px;
   margin: 35px;
-  border-radius: 100px; 
+  border-radius: 100px;
   background-color: rgb(35, 35, 35);
   font-size: 18px;
   overflow: hidden;
 }
 
 .navItems {
-  padding: 18px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 19px;
+  margin-left: 20px;
   font-weight: bold;
   color: #919191;
   text-decoration: none;
@@ -81,17 +73,11 @@ nav a.router-link-exact-active {
 }
 
 #usernameBox {
-  /* font-family: 'Insula', Helvetica, Arial, sans-serif; */
   margin-left: 15px;
   margin-right: 10px;
   font-weight: bold;
-  color: #919191;
   text-align: center;
   display: block;
   float: left;
 }
-
-/* #username {
-  font-family: 'Insula', Helvetica, Arial, sans-serif;
-} */
 </style>
