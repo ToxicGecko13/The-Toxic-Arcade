@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <div v-if="menuSize = true" class="toggleNvBuContainer">
-      <button class="toggleNvBu" id="on" v-on:click="openNav">&#8801;</button>  
-    </div>
-    <div v-else class="toggleNvBuContainer">
-      <button class="toggleNvBu" id="off" v-on:click="closeNav">&#8801;</button>
-    </div>
-    <!-- <button id="toggleNavMenu" v-on:click="toggleMenu">&#8801;</button> -->
+    <button v-on:click="openNav" id="openNavBu">&#8801;</button>
     <nav id="navMenu">
+      <button v-on:click="closeNav" id="closeNavBu">&times;</button>
+      <br>
       <!-- <div id="usernameBox"><Username Username="XxToxicGeckoxX"/></div> -->
       <router-link class="navItems" id="homeButton"  to="/">Home</router-link>
-      <!-- <span id="underline"></span> -->
       <router-link class="navItems" to="/Game">Game</router-link>
     </nav>
 
@@ -28,25 +23,15 @@ export default {
     Username
   },
   methods: {
-    // Set the width of the side navigation to 250px
+    // Function to open the nave menu from the left to the right
     openNav: function () {
       document.getElementById("navMenu").style.width = "250px";
-      document.getElementById("app").style.marginLeft = "250px";
     },
 
-    // Set the width of the side navigation to 0
+    // Function to close the nave menu from the right to the left
     closeNav: function () {
       document.getElementById("navMenu").style.width = "0";
-      document.getElementById("app").style.marginLeft = "0";
     },
-
-    menuSize: function () {
-      let navMenuWidth = document.getElementById("navMenu").style.width
-
-      if (navMenuWidth = 0) {
-        return true
-      }
-    }
   }
 }
 
@@ -62,30 +47,47 @@ export default {
   margin: 0;
 }
 
-/* The nav show button */
-.toggleNvBuContainer {
+#openNavBu {
+  background-color: rgba(92, 92, 92, 0.445);
+  color: rgba(97, 97, 97, 0.767);
+  font-size: 60px;
   border: 0;
-  background-color: rgba(29, 29, 29, 0.267);
+  margin-left: 18px;
+  margin-top: 10px;
+  padding: 0px 18px;
+  border-radius: 12px;
   float: left;
-  padding: 5px 15px;
-  border-radius: 5px;
-  margin-left: 15px;
 }
 
-.toggleNvBu {
-  color: rgba(68, 68, 68, 0.5);
+#openNavBu:hover {
+  cursor: pointer;
+  background-color: rgba(92, 92, 92, 0.5);
+  transition-duration: .1s;
+}
+
+#closeNavBu {
+  margin-bottom: 20px;
   font-size: 40px;
+  padding: 0px 12px;
+  background-color: rgba(80, 80, 80, 0.562);
+  color: rgb(90, 90, 90);
   border: 0;
-  background: none;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
-/* #underline {
-  width: 100%;
-  height: 5px;
-  background-color: gray;
-} */
+#closeNavBu:hover {
+  cursor: pointer;
+  background-color: rgba(102, 102, 102, 0.5);
+  transition-duration: .1s;
+}
 
-/* The side navigation menu */
+#homeButton {
+    margin-top: 60px;
+}
+
 nav {
   height: 100%;
   width: 0;
@@ -95,11 +97,10 @@ nav {
   left: 0;
   background-color: rgb(17, 17, 17);
   overflow-x: hidden;
-  padding-top: 60px;
-  /* transition: 0.5s; 0.5 second transition effect to slide in the sidenav */
+  /* padding-top: 60px; */
+  transition: 0.5s;
 }
 
-/* The navigation menu links */
 .navItems {
   padding: 10px 8px 8px 32px;
   border: 0;
@@ -109,21 +110,14 @@ nav {
   color: rgb(129, 129, 129);
   display: block;
   transition: 0.3s;
+  width: 100%;
 }
 
-/* When the cursor is over a navigation link, change it's color */
 nav .navItems:hover {
   color: rgb(241, 241, 241);
   background-color: rgb(121, 111, 111);
 }
 
-/* When nav items are active change their style */
-nav .navItems:active {
-  background-color: rgb(90, 90, 90);
-  color: #15be15;
-}
-
-/* When the page is where a button is linked to */
 nav a.router-link-exact-active {
   color: #15be15;
 }
