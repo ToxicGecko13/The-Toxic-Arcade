@@ -1,6 +1,6 @@
 <template>
   <div class="gamePage">
-    <h1>Scroll down intel you can see all of the game board.</h1>
+    <h1>Scroll down until you can see all of the game board.</h1>
     <button id="startGame" v-on:click="setUpGame">Start Game</button>
     <canvas id="gameBoard">
     </canvas>

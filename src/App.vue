@@ -25,13 +25,13 @@ export default {
   methods: {
     // Function to open the nave menu from the left to the right
     openNav: function () {
-      document.getElementById("navMenu").style.width = "250px";
+      document.getElementById('navMenu').style.width = '250px'
     },
 
     // Function to close the nave menu from the right to the left
     closeNav: function () {
-      document.getElementById("navMenu").style.width = "0";
-    },
+      document.getElementById('navMenu').style.width = '0'
+    }
   }
 }
 
